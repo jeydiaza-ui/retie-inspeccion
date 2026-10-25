@@ -7,7 +7,7 @@ guarda varios expedientes en el dispositivo y genera un informe A4 en PDF.
 **En línea:** <https://jeydiaza-ui.github.io/retie-inspeccion/>
 **Repositorio:** <https://github.com/jeydiaza-ui/retie-inspeccion>
 
-> **Versión 3.0.1.** Reescritura de la plantilla original de 2026-10: corrige el
+> **Versión 3.0.2.** Reescritura de la plantilla original de 2026-10: corrige el
 > informe recortado, el service worker, el dictamen sin firma, el cálculo de ΔV
 > trifásico y agrega verificaciones de ampacidad, conductor de tierra, llenado de
 > tubería, poder de corte y protección diferencial por uso.

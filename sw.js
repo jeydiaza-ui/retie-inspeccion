@@ -8,7 +8,7 @@
  * IMPORTANTE: al publicar cambios en cualquiera de los archivos de ASSETS,
  * suba el número de CACHE para que los clientes reciban la versión nueva.
  */
-const CACHE = 'retie-v3.0.1';
+const CACHE = 'retie-v3.0.2';
 const ASSETS = [
   './',
   './index.html',

@@ -594,9 +594,16 @@
   }
 
   function construirNav() {
+    // Etiquetas cortas para que las 12 secciones quepan en una fila en escritorio;
+    // el título completo sigue en el encabezado de cada sección.
+    const corto = {
+      info: 'Proyecto', inst: 'Instrumentos', circ: 'Circuitos', meas: 'Mediciones',
+      meg: 'Aislamiento', tierra: 'Tierra', prot: 'Protecciones', canal: 'Canalizaciones',
+      lux: 'Iluminación', hall: 'Hallazgos', dict: 'Dictamen', fotos: 'Anexo'
+    };
     $('#nav').innerHTML = D.SECCIONES.map(s => {
-      const t = s.titulo.replace(/^\d+\.\s*/, '');
-      return `<button type="button" data-t="${s.id}" aria-current="false">${esc(t)}<span class="n" hidden></span></button>`;
+      const t = corto[s.id] || s.titulo.replace(/^\d+\.\s*/, '');
+      return `<button type="button" data-t="${s.id}" aria-current="false" title="${esc(s.titulo)}">${esc(t)}<span class="n" hidden></span></button>`;
     }).join('');
   }
 
