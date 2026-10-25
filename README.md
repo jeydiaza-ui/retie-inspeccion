@@ -4,7 +4,10 @@ Aplicación web (PWA) para registrar, calcular y documentar inspecciones eléctr
 residenciales bajo **RETIE**, **NTC 2050** y **RETILAP**. Funciona sin conexión,
 guarda varios expedientes en el dispositivo y genera un informe A4 en PDF.
 
-> **Versión 3.0.0.** Reescritura de la plantilla original de 2026-10: corrige el
+**En línea:** <https://jeydiaza-ui.github.io/retie-inspeccion/>
+**Repositorio:** <https://github.com/jeydiaza-ui/retie-inspeccion>
+
+> **Versión 3.0.1.** Reescritura de la plantilla original de 2026-10: corrige el
 > informe recortado, el service worker, el dictamen sin firma, el cálculo de ΔV
 > trifásico y agrega verificaciones de ampacidad, conductor de tierra, llenado de
 > tubería, poder de corte y protección diferencial por uso.
@@ -85,7 +88,6 @@ El repositorio incluye el flujo `.github/workflows/pages.yml`:
 
 > Al cambiar cualquier archivo de `sw.js`, suba el número de `CACHE` para que los
 > clientes reciban la versión nueva.
-
 ### Netlify u otro hosting estático
 
 Cualquier hosting estático sirve. No hay build: el repositorio se publica tal cual.
