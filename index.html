@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1B1F24">
+<meta name="description" content="Registro y verificación de instalaciones eléctricas residenciales: RETIE, NTC 2050 y RETILAP. Funciona sin conexión e imprime un informe.">
+<title>Inspección eléctrica RETIE</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+
+<header class="app-head">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+      <rect width="512" height="512" rx="96" fill="#1B1F24"/>
+      <path d="M290 84 L150 290 H248 L216 428 L366 216 H270 Z" fill="#F2B705"/>
+    </svg>
+    <div>
+      <h1>Inspección eléctrica</h1>
+      <p>RETIE · NTC 2050 · RETILAP</p>
+    </div>
+  </div>
+
+  <div class="head-group">
+    <label class="sr-only" for="selDoc">Expediente</label>
+    <select id="selDoc" title="Expediente abierto"></select>
+    <button type="button" id="bNew" title="Crear un expediente nuevo">Nuevo</button>
+    <button type="button" id="bDup" title="Duplicar el expediente actual">Duplicar</button>
+    <button type="button" id="bDel" title="Eliminar el expediente actual">Eliminar</button>
+  </div>
+
+  <div class="head-group head-actions">
+    <button type="button" id="bOpen" title="Abrir un respaldo JSON">Abrir</button>
+    <button type="button" id="bSave" title="Descargar el respaldo JSON">Guardar copia</button>
+    <button type="button" id="bSettings" title="Ajustar los criterios de verificación">Criterios</button>
+    <button type="button" id="bReport" class="pri" title="Generar el informe imprimible">Informe</button>
+  </div>
+
+  <input type="file" id="fOpen" accept="application/json,.json" hidden>
+</header>
+
+<div class="subbar">
+  <span id="verdictChip" class="chip" role="status">Sin evaluar</span>
+  <span id="saveState" class="save-state">Sin guardar</span>
+</div>
+
+<nav id="nav" aria-label="Secciones de la inspección"></nav>
+
+<main id="main">
+  <noscript>
+    <p class="note">Esta aplicación necesita JavaScript. Si la abrió desde un archivo local, use un servidor
+      local o publíquela por HTTPS para que funcione también sin conexión.</p>
+  </noscript>
+</main>
+
+<dialog id="dlgSettings" aria-labelledby="dlgTitle">
+  <form method="dialog" class="dlg">
+    <h2 id="dlgTitle">Criterios de verificación</h2>
+    <p class="note">Estos valores alimentan las validaciones y el dictamen sugerido. Confróntelos con la
+      versión vigente de RETIE, NTC 2050 y RETILAP antes de emitir un informe.</p>
+    <div id="settingsBody" class="grid"></div>
+    <div class="dlg-actions">
+      <button type="button" id="bResetCrit">Restablecer</button>
+      <button type="button" id="bCloseSettings">Cerrar</button>
+      <button type="submit" class="pri" id="bSaveSettings">Guardar criterios</button>
+    </div>
+  </form>
+</dialog>
+
+<section id="report" class="report" hidden aria-label="Vista previa del informe">
+  <div class="report-bar">
+    <div>
+      <strong>Informe</strong>
+      <span id="reportState" class="save-state"></span>
+    </div>
+    <div class="head-group">
+      <button type="button" id="bPrint" class="pri">Imprimir / PDF</button>
+      <button type="button" id="bCloseReport">Cerrar</button>
+    </div>
+  </div>
+  <div id="reportPages" class="report-pages"></div>
+</section>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/calc.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/report.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

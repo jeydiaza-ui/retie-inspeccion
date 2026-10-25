@@ -1,0 +1,18 @@
+# Dependencias y artefactos de pruebas
+node_modules/
+npm-debug.log*
+coverage/
+
+# Archivos personales: informes de clientes, respaldos y copia original
+CLAUDE/
+informes/
+*.pdf
+*.zip
+_original/
+_local/
+progreso_RETIE.txt
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

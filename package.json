@@ -1,0 +1,17 @@
+{
+  "name": "retie-inspeccion",
+  "version": "3.0.0",
+  "private": true,
+  "description": "PWA para registrar, calcular y documentar inspecciones eléctricas RETIE / NTC 2050 / RETILAP",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "test": "node --test tests/calc.test.js",
+    "e2e": "node tests/e2e.cjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
